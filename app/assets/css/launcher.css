@@ -2668,9 +2668,7 @@ input:checked + .toggleSwitchSlider:before {
     height: 70px;
     width: auto;
     position: relative;
-    border: 2px solid white;
     box-sizing: border-box;
-    border-radius: 50%;
 }
 
 /* Logo container styles. */
@@ -3767,11 +3765,11 @@ input:checked + .toggleSwitchSlider:before {
         transform: rotate(0deg);
     }
     to {
-        transform: rotate(1440deg);
+        transform: rotate(360deg);
     }
 }
 
 /* Class which is applied when the spinner image is spinning. */
 .rotating {
-    animation: rotating 5s linear infinite;
+    animation: rotating 10s linear infinite;
 }
