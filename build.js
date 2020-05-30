@@ -18,10 +18,10 @@ function getCurrentPlatform(){
 builder.build({
     targets: (process.argv[2] != null && Platform[process.argv[2]] != null ? Platform[process.argv[2]] : getCurrentPlatform()).createTarget(),
     config: {
-        appId: 'helioslauncher',
-        productName: 'Helios Launcher',
+        appId: 'TopaziaLauncher',
+        productName: 'Topazia Launcher',
         artifactName: '${productName}-setup-${version}.${ext}',
-        copyright: 'Copyright © 2018-2020 Daniel Scalzi',
+        copyright: 'Copyright © 2018-2020 Daniel Scalzi - Topazia - SuperKooka',
         directories: {
             buildResources: 'build',
             output: 'dist'
@@ -48,8 +48,8 @@ builder.build({
             target: 'AppImage',
             maintainer: 'Daniel Scalzi',
             vendor: 'Daniel Scalzi',
-            synopsis: 'Modded Minecraft Launcher',
-            description: 'Custom launcher which allows users to join modded servers. All mods, configurations, and updates are handled automatically.',
+            synopsis: 'Le launcher du serveur',
+            description: "Ce launcher provient d'Helios Launcher.",
             category: 'Game'
         },
         compression: 'maximum',
