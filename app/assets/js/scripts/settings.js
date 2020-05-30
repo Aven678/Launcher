@@ -444,7 +444,7 @@ function populateAuthAccounts(){
         const acc = authAccounts[val]
         authAccountStr += `<div class="settingsAuthAccount" uuid="${acc.uuid}">
             <div class="settingsAuthAccountLeft">
-                <img class="settingsAuthAccountImage" alt="${acc.displayName}" src="https://crafatar.com/renders/body/${acc.uuid}?scale=3&default=MHF_Steve&overlay">
+                <img class="settingsAuthAccountImage" alt="${acc.displayName}" src="https://minotar.net/body/${acc.displayName}">
             </div>
             <div class="settingsAuthAccountRight">
                 <div class="settingsAuthAccountDetails">
@@ -677,8 +677,6 @@ function resolveDropinModsForUI(){
                     </div>
                 </div>`
     }
-
-    document.getElementById('settingsDropinModsContent').innerHTML = dropinMods
 }
 
 /**
@@ -709,32 +707,32 @@ function bindDropinModsRemoveButton(){
  * Bind functionality to the file system button for the selected
  * server configuration.
  */
-function bindDropinModFileSystemButton(){
-    const fsBtn = document.getElementById('settingsDropinFileSystemButton')
-    fsBtn.onclick = () => {
-        DropinModUtil.validateDir(CACHE_SETTINGS_MODS_DIR)
-        shell.openPath(CACHE_SETTINGS_MODS_DIR)
-    }
-    fsBtn.ondragenter = e => {
-        e.dataTransfer.dropEffect = 'move'
-        fsBtn.setAttribute('drag', '')
-        e.preventDefault()
-    }
-    fsBtn.ondragover = e => {
-        e.preventDefault()
-    }
-    fsBtn.ondragleave = e => {
-        fsBtn.removeAttribute('drag')
-    }
-
-    fsBtn.ondrop = e => {
-        fsBtn.removeAttribute('drag')
-        e.preventDefault()
-
-        DropinModUtil.addDropinMods(e.dataTransfer.files, CACHE_SETTINGS_MODS_DIR)
-        reloadDropinMods()
-    }
-}
+//function bindDropinModFileSystemButton(){
+//    const fsBtn = document.getElementById('settingsDropinFileSystemButton')
+//    fsBtn.onclick = () => {
+//        //DropinModUtil.validateDir(CACHE_SETTINGS_MODS_DIR)
+//        shell.openPath(CACHE_SETTINGS_MODS_DIR)
+//    }
+//    fsBtn.ondragenter = e => {
+//        e.dataTransfer.dropEffect = 'move'
+//       fsBtn.setAttribute('drag', '')
+//        e.preventDefault()
+//    }
+//    fsBtn.ondragover = e => {
+//        e.preventDefault()
+//    }
+//    fsBtn.ondragleave = e => {
+//        fsBtn.removeAttribute('drag')
+//    }
+//
+//    fsBtn.ondrop = e => {
+//        fsBtn.removeAttribute('drag')
+//        e.preventDefault()
+//
+//        DropinModUtil.addDropinMods(e.dataTransfer.files, CACHE_SETTINGS_MODS_DIR)
+//        reloadDropinMods()
+//    }
+//}
 
 /**
  * Save drop-in mod states. Enabling and disabling is just a matter
@@ -926,7 +924,7 @@ function prepareModsTab(first){
     resolveDropinModsForUI()
     resolveShaderpacksForUI()
     bindDropinModsRemoveButton()
-    bindDropinModFileSystemButton()
+    //bindDropinModFileSystemButton()
     bindShaderpackButton()
     bindModsToggleSwitch()
     loadSelectedServerOnModsTab()
